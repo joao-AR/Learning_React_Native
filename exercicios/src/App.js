@@ -19,13 +19,16 @@ import ListaProdutos from './components/Produtos/ListaProdutos';//Aula 40
 import ListaProdutosV2 from './components/Produtos/ListaProdutosV2';//Aula 41
 import DigiteSeuNome from './components/DigiteSeuNome';// Aula 42 Componentes controlados
 import FlexBoxV1 from './components/layout/FlexBoxV1';//Aula 46
+import FlexBoxV2 from './components/layout/FlexBoxV2';// Aula 47
+import Mega from './components/mega-sena/Mega';// Aula 50 Método render
 
 
 export default () => {
   return(
     <SafeAreaView style={style.App}>
-    <FlexBoxV1/>
+    <Mega qtdNumeros={12}></Mega>
     {/*
+    <FlexBoxV2/>
     <DigiteSeuNome/>
     <ListaProdutosV2/>
     <ListaProdutos/>
