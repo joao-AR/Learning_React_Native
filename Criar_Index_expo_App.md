@@ -8,7 +8,7 @@
 - por padrão temos ` "main": "node_modules/expo/AppEntry.js"
 `
 <br>
-vamos substituir  por ` "main": "./index"
+vamos substituir  por ` "main": "./index.js"
 `
 
 ### 3) AppEntry.js
