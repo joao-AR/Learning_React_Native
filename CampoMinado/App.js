@@ -8,9 +8,9 @@ import { Component } from 'react';
 
 export default class App extends Component {
   
-  constructor(props){
+  constructor (props){
     super(props)
-    this.state = this.createState
+    this.state = this.createState()
   }
     minesAmount = () =>{
     const cols = params.getColumnAmount()
@@ -18,7 +18,7 @@ export default class App extends Component {
     return Math.ceil(cols * rows * params.difficultLevel)
   }
 
-  createState =  () =>{
+  createState = () =>{
     const cols = params.getColumnAmount()
     const rows = params.getRowsAmount()
     return {
@@ -31,16 +31,10 @@ export default class App extends Component {
       <View style={styles.container}>
           <Text> Iniciando o campo minado2 </Text>
           <Text>Tamanho da grade {params.getRowsAmount()} X {params.getColumnAmount()}</Text>
-          <Field />
-          <Field  opened />
-          <Field  opened nearMines={1}/>
-          <Field  opened nearMines={2}/>
-          <Field  opened nearMines={5}/>
-          <Field  opened nearMines={6}/>
-          <Field  mined/>
-          <Field  opened mined/>
-          <Field  opened mined exploded/>
-          <Field  flagged/>
+
+          <View style={styles.container}>
+            <MineField board={this.state.board}></MineField>
+          </View>
           
       </View>
     )
@@ -50,8 +44,12 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    // backgroundColor: '#fff',
+   
+    justifyContent: 'flex-end',
   },
+  board:{
+    alignItems:'center',
+    backgroundColor:'#AAA'
+  }
 });
