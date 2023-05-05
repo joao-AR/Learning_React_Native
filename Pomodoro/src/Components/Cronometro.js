@@ -3,9 +3,10 @@ import { Text, View, Button,StyleSheet } from 'react-native';
 
 const Cronometro = ({ workTime, breakTime }) => {
 
+  console.log(workTime);
   const [minutes, setMinutes] = useState(workTime);
   const [seconds, setSeconds] = useState(0);
-  const [Intervalo,setIntervalo] = useState()
+  const [Intervalo,setIntervalo] = useState();
 
   const start  = () => {
     setIntervalo(
@@ -13,7 +14,6 @@ const Cronometro = ({ workTime, breakTime }) => {
         changeTime()
       }, 1000)
     )
-    
   }
 
   const stop = () => {
@@ -41,7 +41,7 @@ const Cronometro = ({ workTime, breakTime }) => {
       }
     });
   };
-
+  
   return (
     <View style={styles.container}>
       <Text style={styles.display} >
