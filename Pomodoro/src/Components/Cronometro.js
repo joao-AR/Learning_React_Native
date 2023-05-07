@@ -9,6 +9,7 @@ const Cronometro = ({ workTime, breakTime }) => {
   const [Intervalo,setIntervalo] = useState();
 
   const start  = () => {
+    setMinutes(workTime);
     setIntervalo(
       setInterval(() => {
         changeTime()
