@@ -1,31 +1,34 @@
-
-import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
+import React from 'react';
+import {SafeAreaView, StyleSheet, View, Text} from 'react-native';
 import Cronometro from '../Components/Cronometro'
-import { useState } from 'react';
 
-export default function App() {
-    const [workTime,setWorkTime] = useState('')// passando vaizio para funcionar o cronometro 
-
+const SecondPage = ({route}) => {
     return (
-    <View style={styles.container}>
-        <Cronometro workTime={workTime} breakTime={5}/>
-        <TextInput placeholder='Digite o tempo'  keyboardType='numeric' onChangeText={workTime => setWorkTime(workTime)}  style={styles.input}/>
-    </View>
+        <SafeAreaView style={{flex: 1}}>
+            <View style={styles.container}>
+                <Text style={styles.textStyle}>Tempo de estudo  {route.params.workTime}</Text>
+                <Cronometro workTime={route.params.workTime} breakTime={5}/>
+            </View>
+        </SafeAreaView>
     );
-}
+};
+
+export default SecondPage;
 
 const styles = StyleSheet.create({
     container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+        flex: 1,
+        alignItems: 'center',
+        padding: 20,
     },
-    input:{
-    alignItems:'center',
-    justifyContent:'center',
-    height:50,
-    width:100,
-    borderColor:"#000"
-    }
+    heading: {
+        fontSize: 25,
+        textAlign: 'center',
+        marginVertical: 10,
+    },
+    textStyle: {
+        textAlign: 'center',
+        fontSize: 16,
+        marginVertical: 10,
+    },
 });

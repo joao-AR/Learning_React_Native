@@ -1,34 +1,36 @@
-import React from 'react'
-import { View, Text, Button } from 'react-native'
+// import React from 'react'
+// import { View, Text, Button } from 'react-native'
 
-export default props => (
-    <View style={{flex: 1}}>
-        <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
-            {props.voltar
-                ?   <Button
-                        title='Voltar'
-                        onPress={() => {
-                            props.navigation.goBack()
-                        }}
-                    />
-                : false
-            }
-            {props.avancar
-                ?   <Button
-                        title='mudar de Tela'
-                        onPress={() => {
-                            // props.navigation.navigate usado para add a mesma tela na stack quando clicar em avançar
-                            props.navigation.navigate(
-                                props.avancar,
-                                props.avancarParams
-                            )
-                        }}
-                    />
-                : false
-            }
-        </View>
-        <View style={{flex: 1}}>
-            {props.children}
-        </View>
-    </View>
-)
+// export default props => {
+//     console.log(props.numero)
+//     return(
+//         <View style={{flex: 1}}>
+//             <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
+//                 {props.voltar
+//                     ?   <Button
+//                             title='Voltar'
+//                             onPress={() => {
+//                                 props.navigation.goBack()
+//                             }}
+//                         />
+//                     : false
+//                 }
+//                 {props.avancar
+//                     ?   <Button
+//                             title='mudar de Tela'
+//                             onPress={() => {
+//                                 // props.navigation.push usado para add a mesma tela na stack quando clicar em avançar
+//                                 props.navigation.navigate(
+//                                     props.avancar,
+                        
+//                                 )
+//                             }}
+//                         />
+//                     : false
+//                 }
+//             </View>
+//             <View style={{flex: 1}}>
+//                 {props.children}
+//             </View>
+//         </View>
+// )}
